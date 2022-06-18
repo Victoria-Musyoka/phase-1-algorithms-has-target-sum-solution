@@ -1,6 +1,16 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+    const seenNumbers = new Set(); // start an empty Set
+    for (const number of array) {
+      const complement = target - number;
+      if (seenNumbers.has(complement)) return true;
+  
+      // .add adds the number to the Set
+      seenNumbers.add(number);
+    }
+    return false;
+  }
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -9,6 +19,12 @@ function hasTargetSum(array, target) {
 /* 
   Add your pseudocode here
 */
+// iterate over the array of Numbers
+//   for the present number, identify as a complementary number that adds to the target
+//   iterate over the remaining numbers in the array
+//     check if its complementary
+//       if so return true
+//       if Not , return false.
 
 /*
   Add written explanation of your solution here
